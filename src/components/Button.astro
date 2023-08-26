@@ -1,0 +1,33 @@
+---
+interface Props {
+    label: string;
+}
+
+const { label } = Astro.props;
+---
+
+<button class="btn">
+    {label}
+</button>
+
+<style>
+    .btn {
+        background-color: var(--Darkgrayblue);
+        color: var(--White);
+        border-radius: 56px;
+        border: none;
+        padding: 16px 24px;
+        width: 80%;
+
+        font-size: 18px;
+        font-weight: var(--fontLight);
+    }
+    .btn:hover {
+        background: var(--BgLightslateblue);
+        background: linear-gradient(
+            180deg,
+            var(--BgLightslateblue) 0%,
+            var(--BgLightroyalblue) 100%
+        );
+    }
+</style>

@@ -1,0 +1,33 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
+---
+
+<Layout title="Frontend Mentor | Results summary component">
+    <main>
+        <Card />
+    </main>
+    <footer class="attribution" slot="footer">
+        Challenge by <a
+            href="https://www.frontendmentor.io?ref=challenge"
+            target="_blank">Frontend Mentor</a
+        >. Coded by <a href="#">Igor Gonçalves</a>.
+    </footer>
+</Layout>
+
+<style>
+    main {
+		width: 100%;
+		min-width: var(--mobile);
+		max-width: var(--desktop);
+		margin: 0 auto;
+    }
+    .attribution {
+		width: 100%;
+        font-size: 11px;
+        text-align: center;
+    }
+    .attribution a {
+        color: hsl(228, 45%, 44%);
+    }
+</style>

@@ -1,0 +1,72 @@
+---
+import List from "./List.astro";
+interface Props {
+    title?: string;
+    body?: string;
+    href?: string;
+}
+
+const { href, title, body } = Astro.props;
+---
+
+<div class="card">
+    <h1 class="card__title">Your Result</h1>
+	<div class="wrapper-rank">
+
+		<h2 class="card__rank">76</h2>
+		<p class="card__paragraphy u-rank">of 100</p>
+	</div>
+
+    <h3 class="card__subtitle">Great</h3>
+    <p class="card__paragraphy">
+        You scored higher than 65% of the people who have taken these tests.
+    </p>
+</div>
+<List />
+<style>
+    .card {,
+        background: var(--BgLightslateblue);
+        background: linear-gradient(
+            180deg,
+            var(--BgLightslateblue) 0%,
+            var(--BgLightroyalblue) 100%
+        );
+		padding: 1rem 2.5rem;
+		text-align: center;
+		border-bottom-left-radius: 36px;
+		border-bottom-right-radius: 36px;
+    }
+	.card__title {
+		font-size: 1rem;
+		color: var(--Lightlavender);
+	}
+	.wrapper-rank {
+		width: 150px;
+		height: 150px;
+		border-radius: 50%;
+		background: rgb(78,33,202);
+		background: linear-gradient(180deg, rgba(78,33,202,1) 0%, rgba(36,33,202,0) 100%);
+		margin: 20px 0;
+		text-align: center;
+		position: relative;
+		left: 25%;
+	}
+	.card__rank,.u-rank {
+		position: relative;
+		top: 20%;
+	}
+	.card__rank {
+		color: var(--White);
+		font-size: 3.5rem;
+		font-weight: var(--fontHeavy);
+	}
+	.card__paragraphy {
+		color: var(--Lightlavender);
+		font-size: 1rem;
+	}
+	.card__subtitle {
+		color: var(--White);
+		font-size: 1.5rem;
+		font-weight: var(--fontLight);
+	}
+</style>
