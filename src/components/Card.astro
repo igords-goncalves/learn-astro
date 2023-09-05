@@ -24,7 +24,7 @@ const { href, title, body } = Astro.props;
 </div>
 <List />
 <style>
-    .card {,
+    .card {
         background: var(--BgLightslateblue);
         background: linear-gradient(
             180deg,
@@ -39,17 +39,17 @@ const { href, title, body } = Astro.props;
 	.card__title {
 		font-size: 1rem;
 		color: var(--Lightlavender);
+		margin-top: 16px;
 	}
 	.wrapper-rank {
-		width: 150px;
-		height: 150px;
+		width: 130px;
+		height: 130px;
 		border-radius: 50%;
 		background: rgb(78,33,202);
 		background: linear-gradient(180deg, rgba(78,33,202,1) 0%, rgba(36,33,202,0) 100%);
-		margin: 20px 0;
+		margin: 20px auto;
 		text-align: center;
 		position: relative;
-		left: 25%;
 	}
 	.card__rank,.u-rank {
 		position: relative;
@@ -63,10 +63,14 @@ const { href, title, body } = Astro.props;
 	.card__paragraphy {
 		color: var(--Lightlavender);
 		font-size: 1rem;
+		max-width: 250px; 
+		margin: 0 auto;
+		padding-bottom: 20px;
 	}
 	.card__subtitle {
 		color: var(--White);
 		font-size: 1.5rem;
 		font-weight: var(--fontLight);
+		margin-bottom: 8px;
 	}
 </style>
