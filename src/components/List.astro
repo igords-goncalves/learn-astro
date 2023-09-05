@@ -1,30 +1,60 @@
 ---
 import Button from "./Button.astro";
-import rankList from "../data/data.json"
-
-const icons = rankList.map(icon => icon.icon)
+import rankList from "../data/data.json";
 ---
 
 <div class="list">
-    <h2 class="list__title">
-        Summary 
-    </h2>
+    <h2 class="list__title">Summary</h2>
     <ul class="list__items">
-        {rankList.map(item => (
-            // TODO: insert image in img tag
-            <li class="list__item"></li>
-            <li class="list__item">{item.category}</li>
-            <li class="list__item">{item.score}<span class="list__max">/100</span></li>
-        ))}
+        {
+            rankList.map((item) => (
+                <li class="list__item" style={`background-color: ${item.background}`}>
+                    <!-- <img src={item.icon} alt="Icon image" /> -->
+                    <span class="list__category" style={`color: ${item.color}`}>{item.category}</span>
+                    <span class="list__score">
+                        {item.score}
+                        <span class="list__maxscore">/100</span>
+                    </span>
+                </li>
+            ))
+        }
     </ul>
 </div>
-<Button label="Continue"/>
+<Button label="Continue" />
 
 <style>
+    .list {
+        margin: 1em 0;
+        width: 83%;
+    }
+    .list__title {
+        margin-bottom: 16px;
+        font-size: larger;
+        font-weight: var(--fontHeavy);
+        color: var(--Darkgrayblue);
+    }
     .list__items {
         list-style: none;
+        display: flex;
+        flex-direction: column;
     }
     .list__item {
-        display: inline-block;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 8px 0;
+        padding: 1.4em;
+        border-radius: 10px;
+        font-size: medium;
+        font-weight: var(--fontMedium);
+    }
+    .list__category {
+        flex-grow: 1;
+    }
+    .list__score {
+        color: var(--Darkgrayblue);
+    }
+    .list__maxscore {
+        color: var(--Lightlavender);
     }
 </style>
