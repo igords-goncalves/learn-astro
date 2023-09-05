@@ -1,6 +1,8 @@
 ---
 import Button from "./Button.astro";
+import rankList from "../data/data.json"
 
+const icons = rankList.map(icon => icon.icon)
 ---
 
 <div class="list">
@@ -8,12 +10,21 @@ import Button from "./Button.astro";
         Summary 
     </h2>
     <ul class="list__items">
-        Reaction 80 / 100 Memory 92 / 100 Verbal 61 / 100 Visual 72 / 100
-
+        {rankList.map(item => (
+            // TODO: insert image in img tag
+            <li class="list__item"></li>
+            <li class="list__item">{item.category}</li>
+            <li class="list__item">{item.score}<span class="list__max">/100</span></li>
+        ))}
     </ul>
 </div>
 <Button label="Continue"/>
 
 <style>
-
+    .list__items {
+        list-style: none;
+    }
+    .list__item {
+        display: inline-block;
+    }
 </style>
